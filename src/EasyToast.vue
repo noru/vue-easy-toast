@@ -42,7 +42,6 @@
   }
 </style>
 <script>
-  const MODES = new Set(['override', 'queue'])
   const DEFAULT_OPT = {
     id: 'easy-toast-default',
     className: '',

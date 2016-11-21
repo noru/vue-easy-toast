@@ -5,7 +5,7 @@
 *  2. font-awesome? emoji?
 * */
 /* eslint-disable */
-import * as EasyToast from './EasyToast'
+import * as EasyToast from './EasyToast.vue'
 
 const CONSTRUCTOR = Vue.extend(EasyToast)
 const CACHE = {}
