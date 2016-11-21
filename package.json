@@ -2,9 +2,39 @@
   "name": "vue-easy-toast",
   "version": "0.0.1",
   "scripts": {
-    "dist": "npm run test && npm run build",
+    "dist": "",
     "build": "",
     "test": ""
-
-  }
+  },
+  "description": "A toast plugin for vue",
+  "main": "dist/vue-easy-toast.min.js",
+  "dependencies": {},
+  "devDependencies": {
+    "babel-core": "^5.8.33",
+    "babel-loader": "^5.3.3",
+    "css-loader": "^0.22.0",
+    "extract-text-webpack-plugin": "^0.9.1",
+    "style-loader": "^0.13.0",
+    "vue-html-loader": "^1.0.0",
+    "webpack": "^1.12.3",
+    "webpack-dev-server": "^1.12.1"
+  },
+  "directories": {
+    "example": "example",
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/noru/vue-easy-toast.git"
+  },
+  "keywords": [
+    "vue",
+    "toast"
+  ],
+  "author": "nooooru@gmail.com",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/noru/vue-easy-toast/issues"
+  },
+  "homepage": "https://github.com/noru/vue-easy-toast#readme"
 }
