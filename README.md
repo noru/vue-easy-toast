@@ -5,6 +5,9 @@ This is a beta version! Not yet tested on Vue 2.0.
 
 ## Usage
 
+#### install
+`npm install vue-easy-toast --save`
+
 #### Quickstart
 ```
 // before start
