@@ -64,7 +64,8 @@
         return Object.assign({}, DEFAULT_OPT, this.option)
       },
       clazz: function() {
-        return Array.isArray(this.className) ? this.className.join(' ') : String(this.className)
+        let clazz = this.option.className
+        return Array.isArray(clazz) ? clazz.join(' ') : String(clazz)
       }
     },
     watch: {
