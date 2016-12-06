@@ -5,18 +5,17 @@
 *  2. font-awesome? emoji?
 * */
 /* eslint-disable */
-import * as EasyToast from './EasyToast.vue'
-
-const CONSTRUCTOR = Vue.extend(EasyToast)
-const CACHE = {}
-function toast(msg, option = {}) {
-  option.message = msg
-  let toast = CACHE[option.id] || (CACHE[option.id] = new CONSTRUCTOR())
-  toast.queue.push(option)
-}
+import * as EasyToastVue from './EasyToast.vue'
 
 export default {
   install(Vue, options) {
+    const CONSTRUCTOR = Vue.extend(EasyToastVue)
+    const CACHE = {}
+    function toast(msg, options = {}) {
+      options.message = msg
+      let toast = CACHE[options.id] || (CACHE[options.id] = new CONSTRUCTOR())
+      toast.queue.push(options)
+    }
     Vue.toast = Vue.prototype.$toast = toast
   }
 }

@@ -4,7 +4,7 @@
   "scripts": {
     "dist": "NODE_ENV=production webpack --config webpack.config.js"
   },
-  "description": "A toast plugin for vue",
+  "description": "A toast plugin for vue/vue2",
   "main": "dist/vue-easy-toast.min.js",
   "directories": {
     "example": "example",
@@ -37,9 +37,6 @@
     "vue-loader": "^8.5.4",
     "vue-style-loader": "^1.0.0",
     "webpack": "^1.13.3"
-  },
-  "peerDependencies":  {
-    "vue": "^1.x || 2.x"
   },
   "dependencies": {}
 }
