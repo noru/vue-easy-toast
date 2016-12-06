@@ -1,6 +1,6 @@
 <template>
   <div
-    id="mergedOption.id"
+    :id="mergedOption.id"
     class="et-wrapper"
     :class="clazz"
     :transition="mergedOption.transition"
@@ -95,11 +95,7 @@
     },
     created() {
       let vm = this.$mount()
-      if (el.$appendTo) {
-        vm.$appendTo(this.mergedOption.parent)
-      } else {
-        document.querySelector(this.mergedOption.parent).appendChild(vm.$el)
-      }
+      document.querySelector(this.mergedOption.parent).appendChild(vm.$el)
     }
   }
 </script>
