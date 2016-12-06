@@ -1,7 +1,7 @@
 # Vue-Easy-Toast
-A toast plugin for vue.
+A toast plugin for vue/vue2.
 
-This is a beta version! Not yet tested on Vue 2.0.
+This is a beta version! 
 
 ## Usage
 

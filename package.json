@@ -1,6 +1,6 @@
 {
   "name": "vue-easy-toast",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "scripts": {
     "dist": "NODE_ENV=production webpack --config webpack.config.js"
   },
