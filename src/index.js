@@ -1,10 +1,3 @@
-/*
-* ON-GOING COMPONENT!
-* TODO:
-*  1. option: position (left right top bottom center)
-*  2. font-awesome? emoji?
-* */
-/* eslint-disable */
 import * as EasyToastVue from './EasyToast.vue'
 
 export default {

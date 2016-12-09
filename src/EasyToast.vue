@@ -102,7 +102,6 @@
     opacity: 0;
     left: -1000px;
   }
-
 </style>
 <script>
   const DEFAULT_OPT = {
