@@ -108,7 +108,7 @@
     id: 'easy-toast-default',
     className: '',
     parent: 'body',
-    transition: 'slide-up',
+    transition: 'fade',
     duration: 5000,
     message: ''
   }
