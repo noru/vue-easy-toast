@@ -1,7 +1,7 @@
 # Vue-Easy-Toast
 A toast plugin for vue/vue2.
 
-This is a beta version! 
+This is a beta version!
 
 ## Usage
 
@@ -34,7 +34,7 @@ parent | `string`| `body` | Selector of the container
 className | `string`, `array` | | Self-defined class names to pass through. There are 3 pre-defined classes: `et-info`, `et-warn`,`et-alert`, to toast with different backgroud color
 duration | `number` | 5000 | The duration one toast will last, in milliseconds
 mode | `string` | `override` | `override` or `queue`. If `override`, the last toast will forcibly flush previous toasts, otherwise it is queued after others
-transition | `string` | `fade` | Same as vue [Transitions](http://v1.vuejs.org/guide/transitions.html)
+transition | `string` | `fade` | Built-in transitions: `fade`, `slide-[up/down/left/right]`. See also [Transitions](http://v1.vuejs.org/guide/transitions.html)
 
 ##### example
 ```

@@ -41,6 +41,63 @@
   .et-wrapper.et-info {
     background-color: rgba(32, 83, 201, 0.7);
   }
+  .fade-transition {
+    -webkit-transition: opacity .3s ease;
+    transition: opacity .3s ease;
+  }
+  .fade-enter,
+  .fade-leave {
+    opacity: 0;
+  }
+  .slide-down-transition {
+    -webkit-transition: opacity .3s ease, top .3s ease-in;
+    transition: opacity .3s ease, top .3s ease-in;
+  }
+  .slide-down-enter {
+    opacity: 0;
+    top: -10%;
+  }
+  .slide-down-leave {
+    opacity: 0;
+    top: -10%;
+  }
+  .slide-up-transition {
+    -webkit-transition: opacity .3s ease, top .3s ease-in;
+    transition: opacity .3s ease, top .3s ease-in;
+  }
+  .slide-up-enter {
+    opacity: 0;
+    top: 110%;
+  }
+  .slide-up-leave {
+    opacity: 0;
+    top: 110%;
+  }
+  .slide-left-transition {
+    -webkit-transition: opacity .3s ease, left .3s ease-in;
+    transition: opacity .3s ease, left .3s ease-in;
+  }
+  .slide-left-enter {
+    opacity: 0;
+    left: 110%;
+  }
+  .slide-left-leave {
+    opacity: 0;
+    left: 110%;
+  }
+  .slide-right-transition {
+    -webkit-transition: opacity .3s ease, left .3s ease;
+    transition: opacity .3s ease, left .3s ease;
+  }
+  .slide-right-enter {
+    opacity: 0;
+    left: -1000px;
+  }
+  .slide-right-leave {
+    opacity: 0;
+    left: -1000px;
+  }
+
 </style>
 <script>
   const DEFAULT_OPT = {
