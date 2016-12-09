@@ -1,5 +1,6 @@
 <template>
-  <div
+  <transition :name="mergedOption.transition">
+    <div
     :id="mergedOption.id"
     class="et-wrapper"
     :class="clazz"
@@ -8,6 +9,7 @@
     >
     <span class="et-content">{{ mergedOption.message }}</span>
   </div>
+  </transition>
 </template>
 <style scoped>
   .et-wrapper {
@@ -41,58 +43,61 @@
   .et-wrapper.et-info {
     background-color: rgba(32, 83, 201, 0.7);
   }
+  .fade-enter-active,
+  .fade-leave-active,
   .fade-transition {
     -webkit-transition: opacity .3s ease;
     transition: opacity .3s ease;
   }
   .fade-enter,
-  .fade-leave {
+  .fade-leave,
+  .fade-leave-active {
     opacity: 0;
   }
+  .slide-down-enter-active,
+  .slide-down-leave-active,
   .slide-down-transition {
     -webkit-transition: opacity .3s ease, top .3s ease-in;
     transition: opacity .3s ease, top .3s ease-in;
   }
-  .slide-down-enter {
-    opacity: 0;
-    top: -10%;
-  }
+  .slide-down-leave-active,
+  .slide-down-enter,
   .slide-down-leave {
     opacity: 0;
     top: -10%;
   }
+  .slide-up-enter-active,
+  .slide-up-leave-active,
   .slide-up-transition {
     -webkit-transition: opacity .3s ease, top .3s ease-in;
     transition: opacity .3s ease, top .3s ease-in;
   }
-  .slide-up-enter {
-    opacity: 0;
-    top: 110%;
-  }
+  .slide-up-leave-active,
+  .slide-up-enter,
   .slide-up-leave {
     opacity: 0;
     top: 110%;
   }
+  .slide-left-enter-active,
+  .slide-left-leave-active,
   .slide-left-transition {
     -webkit-transition: opacity .3s ease, left .3s ease-in;
     transition: opacity .3s ease, left .3s ease-in;
   }
-  .slide-left-enter {
-    opacity: 0;
-    left: 110%;
-  }
+  .slide-left-leave-active,
+  .slide-left-enter,
   .slide-left-leave {
     opacity: 0;
     left: 110%;
   }
+  .slide-right-enter-active,
+  .slide-right-leave-active,
   .slide-right-transition {
     -webkit-transition: opacity .3s ease, left .3s ease;
     transition: opacity .3s ease, left .3s ease;
   }
-  .slide-right-enter {
-    opacity: 0;
-    left: -1000px;
-  }
+  .slide-right-leave-active,
+  .slide-right-enter,
   .slide-right-leave {
     opacity: 0;
     left: -1000px;
@@ -104,7 +109,7 @@
     id: 'easy-toast-default',
     className: '',
     parent: 'body',
-    transition: 'fade',
+    transition: 'slide-up',
     duration: 5000,
     message: ''
   }
