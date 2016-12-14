@@ -11,7 +11,7 @@
     </div>
   </transition>
 </template>
-<style scoped>
+<style>
   .et-wrapper {
     background-color: rgba(48, 45, 55, 0.7);
     border-radius: 5px;
