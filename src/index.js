@@ -6,7 +6,8 @@ export default {
     const CACHE = {}
     function toast(msg, options = {}) {
       options.message = msg
-      let toast = CACHE[options.id] || (CACHE[options.id] = new CONSTRUCTOR())
+      let toast = CACHE[options.id] || (CACHE[options.id] = new CONSTRUCTOR)
+      toast.$mount()
       toast.queue.push(options)
     }
     Vue.toast = Vue.prototype.$toast = toast

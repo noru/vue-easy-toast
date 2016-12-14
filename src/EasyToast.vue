@@ -1,30 +1,29 @@
 <template>
   <transition :name="mergedOption.transition">
     <div
-    :id="mergedOption.id"
-    class="et-wrapper"
-    :class="clazz"
-    :transition="mergedOption.transition"
-    v-show="showing"
+      :id="mergedOption.id"
+      class="et-wrapper"
+      :class="clazz"
+      :transition="mergedOption.transition"
+      v-show="showing"
     >
-    <span class="et-content">{{ mergedOption.message }}</span>
-  </div>
+      <span class="et-content">{{ mergedOption.message }}</span>
+    </div>
   </transition>
 </template>
 <style scoped>
   .et-wrapper {
     background-color: rgba(48, 45, 55, 0.7);
     border-radius: 5px;
-    color: white;
-    padding: 10px;
-    z-index: 9999;
-    left: 0;
-    right: 0;
-    margin: auto;
-    width: auto;
+    padding: 10px 30px;
+    left: 50%;
+    transform: translateX(-50%);
     display: inline-block;
-    max-width: 350px;
-    min-width: 200px;
+    max-width: 300px;
+    min-width: 120px;
+    color: white;
+    z-index: 9999;
+    margin: auto;
     text-align: center;
   }
   .et-wrapper {
@@ -112,7 +111,6 @@
     duration: 5000,
     message: ''
   }
-
   export default {
     data() {
       return {
@@ -121,6 +119,7 @@
         showing: false,
       }
     },
+    components: Vue.version[0] === '1' ? { 'transition': { template: '<div><h1>test</h1><slot>456</slot></div>' } } : undefined,
     computed: {
       mergedOption: function() {
         return Object.assign({}, DEFAULT_OPT, this.option)
@@ -154,9 +153,8 @@
         }
       }
     },
-    created() {
-      let vm = this.$mount()
-      document.querySelector(this.mergedOption.parent).appendChild(vm.$el)
-    }
+    mounted() {
+      document.querySelector(this.mergedOption.parent).appendChild(this.$el)
+    },
   }
 </script>
