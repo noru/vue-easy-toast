@@ -119,7 +119,6 @@
         showing: false,
       }
     },
-    components: Vue.version[0] === '1' ? { 'transition': { template: '<div><h1>test</h1><slot>456</slot></div>' } } : undefined,
     computed: {
       mergedOption: function() {
         return Object.assign({}, DEFAULT_OPT, this.option)
