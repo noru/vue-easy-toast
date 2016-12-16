@@ -31,7 +31,7 @@ $vm.$toast('Let me give a toast to you all.')
 Parameter | Type |Default| Description
 --------- | ---- | ------|-----------
 id | `string` | `easy-toast-default` | Unique identifier globally. Use this to create multiple toasts with different setups.
-parent | `string`| `body` | Selector of the container
+parent | `string`| `body` | Selector of the container (TODO, not ready yet, position is fixed to the window)
 className | `string`, `array` | | Self-defined class names to pass through. There are 3 pre-defined classes: `et-info`, `et-warn`,`et-alert`, to toast with different background color
 duration | `number` | 5000 | The duration one toast will last, in milliseconds
 mode | `string` | `override` | `override` or `queue`. If `override`, the last toast will forcibly flush previous toasts, otherwise it is queued after others
