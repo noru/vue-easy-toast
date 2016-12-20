@@ -151,9 +151,6 @@
           }, $this.mergedOption.duration * pending)
         }
       }
-    },
-    mounted() {
-      document.querySelector(this.mergedOption.parent).appendChild(this.$el)
-    },
+    }
   }
 </script>
