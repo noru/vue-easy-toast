@@ -33,6 +33,8 @@ Parameter | Type |Default| Description
 id | `string` | `easy-toast-default` | Unique identifier globally. Use this to create multiple toasts with different setups.
 parent | `string`| `body` | Selector of the container (TODO, not ready yet, position is fixed to the window)
 className | `string`, `array` | | Self-defined class names to pass through. There are 3 pre-defined classes: `et-info`, `et-warn`,`et-alert`, to toast with different background color
+horizontalPosition | `string` | `right` | Position horizontal of toast. There are 3 pre-defined positions: `left`, `right` and `center`
+verticalPosition | `string` | `top` | Position vertical of toast. There are 2 pre-defined positions: `top` and `bottom`
 duration | `number` | 5000 | The duration one toast will last, in milliseconds
 mode | `string` | `override` | `override` or `queue`. If `override`, the last toast will forcibly flush previous toasts, otherwise it is queued after others
 transition | `string` | `fade` | Built-in transitions: `fade`, `slide-[up/down/left/right]`. See also [Transitions](http://v1.vuejs.org/guide/transitions.html)
@@ -47,6 +49,8 @@ Vue.toast('Hi, there!', {
   id: 'my-toast',
   parent: '#toast-container',
   className: ['my-toast', 'toast-warning'],
+  horizontalPosition: 'right',
+  verticalPosition: 'top',
   duration: 3000,
   mode: 'queue',
   transition: 'my-transition'
@@ -54,7 +58,6 @@ Vue.toast('Hi, there!', {
 ```
 
 ##### TODO
-*  option: position (left right top bottom center)
 *  font-awesome? emoji?
 
 ## License
