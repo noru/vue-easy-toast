@@ -20,6 +20,9 @@ Vue.toast('Can I have everybody's attention?')
 
 // or
 $vm.$toast('Let me give a toast to you all.')
+
+// or with HTML Tags
+$vm.$toast('Hi <strong>Jonh</strong>')
 ```
 
 #### More
