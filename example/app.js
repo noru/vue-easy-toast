@@ -29,3 +29,8 @@ let btnBottomCenter = document.getElementById('btnBottomCenter')
 btnBottomCenter.addEventListener('click', () => {
   Vue.toast('Bottom Center', { className: ['et-alert', 'my-class'], horizontalPosition: 'center', verticalPosition: 'bottom' })
 })
+
+let btnHtml = document.getElementById('btnHtml')
+btnHtml.addEventListener('click', () => {
+  Vue.toast('Tag <strong>strong</strong> and <i>Italic</i>. <br><br>New line!', { className: ['et-alert', 'my-class']})
+})
