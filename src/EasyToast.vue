@@ -144,9 +144,20 @@
         return Object.assign({}, DEFAULT_OPT, this.option)
       },
       clazz: function() {
-        let clazz = this.option.className || [];
+        let clazz = []
+        let className = this.option.className
         let horizontalPosition = this.mergedOption.horizontalPosition
         let verticalPosition = this.mergedOption.verticalPosition
+
+        if(className){
+            if(typeof className === 'string'){
+                clazz.push(className)
+            }
+
+            if(Array.isArray(className)){
+                clazz = clazz.concat(className)
+            }
+        }
 
         if(horizontalPosition){
             clazz.push(`et-${horizontalPosition}`)
