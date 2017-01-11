@@ -16,8 +16,6 @@
     background-color: rgba(48, 45, 55, 0.7);
     border-radius: 5px;
     padding: 10px 30px;
-    left: 50%;
-    transform: translateX(-50%);
     display: inline-block;
     max-width: 300px;
     min-width: 120px;
@@ -32,6 +30,26 @@
   }
   .et-content {
     text-align: center;
+  }
+  .et-wrapper.et-left {
+      right: auto;
+      left: 0;
+  }
+  .et-wrapper.et-right {
+      left: auto;
+      right: 0;
+  }
+  .et-wrapper.et-center {
+      left: 50%;
+      transform: translateX(-50%);
+  }
+  .et-wrapper.et-top {
+      top: 0;
+      bottom: auto;
+  }
+  .et-wrapper.et-bottom {
+      top: auto;
+      bottom: 0;
   }
   .et-wrapper.et-alert {
     background-color: rgba(189, 19, 19, 0.7);
@@ -106,6 +124,8 @@
   const DEFAULT_OPT = {
     id: 'easy-toast-default',
     className: '',
+    horizontalPosition: 'right',
+    verticalPosition: 'top',
     parent: 'body',
     transition: 'fade',
     duration: 5000,
@@ -124,8 +144,19 @@
         return Object.assign({}, DEFAULT_OPT, this.option)
       },
       clazz: function() {
-        let clazz = this.option.className
-        return Array.isArray(clazz) ? clazz.join(' ') : String(clazz)
+        let clazz = this.option.className || [];
+        let horizontalPosition = this.mergedOption.horizontalPosition
+        let verticalPosition = this.mergedOption.verticalPosition
+
+        if(horizontalPosition){
+            clazz.push(`et-${horizontalPosition}`)
+        }
+
+        if(verticalPosition){
+            clazz.push(`et-${verticalPosition}`)
+        }
+
+        return clazz.join(' ')
       }
     },
     watch: {
