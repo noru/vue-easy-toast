@@ -2,7 +2,7 @@ Vue.use(window['vue-easy-toast'].default)
 
 let btnTopLeft = document.getElementById('btnTopLeft')
 btnTopLeft.addEventListener('click', () => {
-  Vue.toast('Top Left', { className: ['et-alert', 'my-class'], horizontalPosition: 'left', duration: 30000 })
+  Vue.toast('Top Left', { className: ['et-alert', 'my-class'], horizontalPosition: 'left', duration: 3000 })
 })
 
 let btnTopRight = document.getElementById('btnTopRight')
