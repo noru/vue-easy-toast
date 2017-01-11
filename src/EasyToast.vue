@@ -7,7 +7,7 @@
       :transition="mergedOption.transition"
       v-show="showing"
     >
-      <span class="et-content">{{ mergedOption.message }}</span>
+      <span class="et-content" v-html="mergedOption.message"></span>
     </div>
   </transition>
 </template>
