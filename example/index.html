@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <title>Easy Toast Example</title>
-    <script src="http://cdnjs.cloudflare.com/ajax/libs/vue/1.0.28/vue.min.js"></script>
-    <!-- <script src="https://unpkg.com/vue/dist/vue.js"></script> -->
+    <!-- <script src="http://cdnjs.cloudflare.com/ajax/libs/vue/1.0.28/vue.min.js"></script> -->
+    <script src="https://unpkg.com/vue/dist/vue.js"></script>
     <script src="../dist/vue-easy-toast.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.3.1/css/bulma.min.css">
     <style media="screen">
@@ -22,10 +22,12 @@
     </style>
 </head>
 <body>
+  <style id="cust-style">
+  .et-wrapper.my-class {
+    background-color: red;
+  }
+  </style>
   <div id="app">
-    <style media="screen">
-      {{ customClass }}
-    </style>
     <label class="label">Duration (ms)</label>
     <p class="control">
       <input class="input" type="number" v-model="duration">
@@ -33,25 +35,25 @@
     <p class="control">
       <label class="label">Default Style</label>
       <label class="radio">
-        <input type="radio" name="defalutClass" v-model="defalutClass" value="et-alert">
+        <input type="radio" name="defalutClass" v-model="defaultClass" value="et-alert">
         "et-alert"
       </label>
       <label class="radio">
-        <input type="radio" name="defalutClass" v-model="defalutClass" value="et-warn">
+        <input type="radio" name="defalutClass" v-model="defaultClass" value="et-warn">
         "et-warn"
       </label>
       <label class="radio">
-        <input type="radio" name="defalutClass" v-model="defalutClass" value="et-info">
+        <input type="radio" name="defalutClass" v-model="defaultClass" value="et-info">
         "et-info"
       </label>
       <label class="radio">
-        <input type="radio" name="defalutClass" v-model="defalutClass" value="">
+        <input type="radio" name="defalutClass" v-model="defaultClass" value="">
         None
       </label>
     </p>
     <label class="label">Custom Style</label>
     <p class="control">
-      <textarea class="textarea" v-model="customClass">{{ customClass }}</textarea>
+      <textarea class="textarea" v-model="customClass"></textarea>
     </p>
     <label class="label">Mode</label>
     <p class="control has-icon has-icon-right">

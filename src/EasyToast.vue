@@ -1,15 +1,17 @@
 <template>
-  <transition :name="mergedOption.transition">
-    <div
+  <div>
+    <transition :name="mergedOption.transition">
+      <div
       :id="mergedOption.id"
       class="et-wrapper"
       :class="clazz"
       :transition="mergedOption.transition"
       v-show="showing"
-    >
+      >
       <span class="et-content" v-html="mergedOption.message"></span>
-    </div>
-  </transition>
+      </div>
+    </transition>
+  </div>
 </template>
 <style>
   .et-wrapper {
@@ -121,7 +123,7 @@
   }
 </style>
 <script>
-  // const suppressWarn = Vue.version.startsWith('2.') ? null : { 'transition': Vue.extend({ template: '<div><slot></slot></div>'}) }
+  const suppressWarn = Vue.version.startsWith('2.') ? null : { 'transition': { template: '<div><slot></slot></div>' } }
   const DEFAULT_OPT = {
     id: 'easy-toast-default',
     className: '',
@@ -140,7 +142,7 @@
         showing: false,
       }
     },
-    components: {},
+    components: suppressWarn,
     computed: {
       mergedOption: function() {
         return Object.assign({}, DEFAULT_OPT, this.option)

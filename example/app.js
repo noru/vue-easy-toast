@@ -9,10 +9,15 @@ var app = new Vue({
       horizontalPosition: 'left',
       verticalPosition: 'top',
       transition: 'fade',
-      defalutClass: '',
+      defaultClass: '',
       customClass: '.et-wrapper.my-class { \n\
         background-color: red;\n}',
       message: 'How are <strong>you</strong> <i>doing</i>?',
+    }
+  },
+  watch: {
+    'customClass': function(val) {
+      document.querySelector('#cust-style').textContent = val
     }
   },
   methods: {
