@@ -2,6 +2,8 @@
 
 A toast plugin for vue/vue2.
 
+[DEMO](https://noru.github.io/vue-easy-toast/example/index.html)
+
 Issue/PR is welcomed, I'll response as soon as possible.
 
 ## Usage

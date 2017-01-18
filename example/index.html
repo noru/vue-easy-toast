@@ -3,20 +3,99 @@
 <head>
     <meta charset="UTF-8">
     <title>Easy Toast Example</title>
-    <!-- <script src="http://cdnjs.cloudflare.com/ajax/libs/vue/1.0.28/vue.min.js"></script> -->
-    <script src="https://unpkg.com/vue/dist/vue.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/vue/1.0.28/vue.min.js"></script>
+    <!-- <script src="https://unpkg.com/vue/dist/vue.js"></script> -->
     <script src="../dist/vue-easy-toast.min.js"></script>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.3.1/css/bulma.min.css">
+    <style media="screen">
+      body {
+        height: 100%;
+      }
+      #app {
+        max-width: 800px;
+        margin: 40px;
+      }
+      .input, .textarea {
+        max-width: 300px;
+        min-width: initial;
+      }
+    </style>
 </head>
 <body>
   <div id="app">
-    <button id="btnTopLeft" type="button">Toast top + left</button>
-    <button id="btnTopRight" type="button">Toast top + right</button>
-    <button id="btnTopCenter" type="button">Toast top + center</button>
-    <button id="btnBottomLeft" type="button">Toast bottom + left</button>
-    <button id="btnBottomRight" type="button">Toast bottom + right</button>
-    <button id="btnBottomCenter" type="button">Toast bottom + center</button>
-    <button id="btnHtml" type="button">Toast with HTML Tags</button>
+    <style media="screen">
+      {{ customClass }}
+    </style>
+    <label class="label">Duration (ms)</label>
+    <p class="control">
+      <input class="input" type="number" v-model="duration">
+    </p>
+    <p class="control">
+      <label class="label">Default Style</label>
+      <label class="radio">
+        <input type="radio" name="defalutClass" v-model="defalutClass" value="et-alert">
+        "et-alert"
+      </label>
+      <label class="radio">
+        <input type="radio" name="defalutClass" v-model="defalutClass" value="et-warn">
+        "et-warn"
+      </label>
+      <label class="radio">
+        <input type="radio" name="defalutClass" v-model="defalutClass" value="et-info">
+        "et-info"
+      </label>
+      <label class="radio">
+        <input type="radio" name="defalutClass" v-model="defalutClass" value="">
+        None
+      </label>
+    </p>
+    <label class="label">Custom Style</label>
+    <p class="control">
+      <textarea class="textarea" v-model="customClass">{{ customClass }}</textarea>
+    </p>
+    <label class="label">Mode</label>
+    <p class="control has-icon has-icon-right">
+      <label class="radio">
+        <input type="radio" name="mode" v-model="mode" value="override">
+        Override
+      </label>
+      <label class="radio">
+        <input type="radio" name="mode" v-model="mode" value="queue">
+        Queue
+      </label>
+    </p>
+    <p class="control">
+      <label class="label">Horizontal Position</label>
+      <label class="radio">
+        <input type="radio" name="horizontalPosition" v-model="horizontalPosition" value="left">
+        Left
+      </label>
+      <label class="radio">
+        <input type="radio" name="horizontalPosition" v-model="horizontalPosition" value="center">
+        Center
+      </label>
+      <label class="radio">
+        <input type="radio" name="horizontalPosition" v-model="horizontalPosition" value="right">
+        Right
+      </label>
+    </p>
+    <p class="control">
+      <label class="label">Vertical Position</label>
+      <label class="radio">
+        <input type="radio" name="verticalPosition" v-model="verticalPosition" value="top">
+        Top
+      </label>
+      <label class="radio">
+        <input type="radio" name="verticalPosition" v-model="verticalPosition" value="buttom">
+        Bottom
+      </label>
+    </p>
+    <label class="label">Message</label>
+    <p class="control">
+      <textarea class="textarea" v-model="message"></textarea>
+    </p>
+
+    <button class="button is-primary" @click="toast">Toast it!</button>
   </div>
   <script src="app.js"></script>
 </body>

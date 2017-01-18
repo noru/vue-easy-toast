@@ -1,36 +1,32 @@
+
+
 Vue.use(window['vue-easy-toast'].default)
-
-let btnTopLeft = document.getElementById('btnTopLeft')
-btnTopLeft.addEventListener('click', () => {
-  Vue.toast('Top Left', { className: 'et-alert', horizontalPosition: 'left', duration: 3000 })
+var app = new Vue({
+  data: function() {
+    return {
+      duration: 3000,
+      mode: 'override',
+      horizontalPosition: 'left',
+      verticalPosition: 'top',
+      transition: 'fade',
+      defalutClass: '',
+      customClass: '.et-wrapper.my-class { \n\
+        background-color: red;\n}',
+      message: 'How are <strong>you</strong> <i>doing</i>?',
+    }
+  },
+  methods: {
+    toast: function() {
+      this.$toast(this.message, {
+        duration: this.duration,
+        mode: this.mode,
+        horizontalPosition: this.horizontalPosition,
+        verticalPosition: this.verticalPosition,
+        transition: this.transition,
+        className: [ this.defaultClass, 'my-class'],
+      })
+    }
+  }
 })
 
-let btnTopRight = document.getElementById('btnTopRight')
-btnTopRight.addEventListener('click', () => {
-  Vue.toast('Top Right', { className: ['et-alert', 'my-class'], horizontalPosition: 'right' })
-})
-
-let btnTopCenter = document.getElementById('btnTopCenter')
-btnTopCenter.addEventListener('click', () => {
-  Vue.toast('Top Center', { className: ['et-alert', 'my-class'], horizontalPosition: 'center' })
-})
-
-let btnBottomLeft = document.getElementById('btnBottomLeft')
-btnBottomLeft.addEventListener('click', () => {
-  Vue.toast('Bottom Left', { className: ['et-alert', 'my-class'], horizontalPosition: 'left', verticalPosition: 'bottom' })
-})
-
-let btnBottomRight = document.getElementById('btnBottomRight')
-btnBottomRight.addEventListener('click', () => {
-  Vue.toast('Bottom Right', { className: ['et-alert', 'my-class'], horizontalPosition: 'right', verticalPosition: 'bottom' })
-})
-
-let btnBottomCenter = document.getElementById('btnBottomCenter')
-btnBottomCenter.addEventListener('click', () => {
-  Vue.toast('Bottom Center', { className: ['et-alert', 'my-class'], horizontalPosition: 'center', verticalPosition: 'bottom' })
-})
-
-let btnHtml = document.getElementById('btnHtml')
-btnHtml.addEventListener('click', () => {
-  Vue.toast('Tags <strong>strong</strong> and <i>Italic</i> etc. <br/><br/>New Line!', { className: ['et-alert', 'my-class']})
-})
+app.$mount('#app')

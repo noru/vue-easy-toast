@@ -121,6 +121,7 @@
   }
 </style>
 <script>
+  // const suppressWarn = Vue.version.startsWith('2.') ? null : { 'transition': Vue.extend({ template: '<div><slot></slot></div>'}) }
   const DEFAULT_OPT = {
     id: 'easy-toast-default',
     className: '',
@@ -139,6 +140,7 @@
         showing: false,
       }
     },
+    components: {},
     computed: {
       mergedOption: function() {
         return Object.assign({}, DEFAULT_OPT, this.option)
@@ -176,7 +178,6 @@
         if (pending === 0) {
           return
         }
-        let $this = this
         this.showing = true
         this.option = this.queue[0]
 
@@ -184,13 +185,13 @@
           clearTimeout(this.timeoutId)
           this.showing = false
           this.timeoutId = null
-          this.timeoutId = setTimeout(() => $this.queue.shift())
+          this.timeoutId = setTimeout(() => this.queue.shift())
         } else {
-          this.timeoutId = setTimeout(function() {
-            $this.showing = false
-            $this.timeoutId = null
-            setTimeout(() => $this.queue.shift())
-          }, $this.mergedOption.duration * pending)
+          this.timeoutId = setTimeout(() => {
+            this.showing = false
+            this.timeoutId = null
+            setTimeout(() => this.queue.shift())
+          }, this.mergedOption.duration * pending)
         }
       }
     }
