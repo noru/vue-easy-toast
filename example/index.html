@@ -33,6 +33,33 @@
       <input class="input" type="number" v-model="duration">
     </p>
     <p class="control">
+      <label class="label">Default Transitions</label>
+      <label class="radio">
+        <input type="radio" name="defaultTransition" v-model="defaultTransition" value="fade">
+        Fade
+      </label>
+      <label class="radio">
+        <input type="radio" name="defaultTransition" v-model="defaultTransition" value="slide-up">
+        Slide up
+      </label>
+      <label class="radio">
+        <input type="radio" name="defaultTransition" v-model="defaultTransition" value="slide-down">
+        Slide down
+      </label>
+      <label class="radio">
+        <input type="radio" name="defaultTransition" v-model="defaultTransition" value="slide-left">
+        Slide left
+      </label>
+      <label class="radio">
+        <input type="radio" name="defaultTransition" v-model="defaultTransition" value="slide-right">
+        Slide right
+      </label>
+      <label class="radio">
+        <input type="radio" name="defaultTransition" v-model="defaultTransition" value="">
+        None
+      </label>
+    </p>
+    <p class="control">
       <label class="label">Default Style</label>
       <label class="radio">
         <input type="radio" name="defalutClass" v-model="defaultClass" value="et-alert">

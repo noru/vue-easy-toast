@@ -8,7 +8,7 @@ var app = new Vue({
       mode: 'override',
       horizontalPosition: 'left',
       verticalPosition: 'top',
-      transition: 'fade',
+      defaultTransition: 'fade',
       defaultClass: '',
       customClass: '.et-wrapper.my-class { \n\
         background-color: red;\n}',
@@ -27,7 +27,7 @@ var app = new Vue({
         mode: this.mode,
         horizontalPosition: this.horizontalPosition,
         verticalPosition: this.verticalPosition,
-        transition: this.transition,
+        transition: this.defaultTransition,
         className: [ this.defaultClass, 'my-class'],
       })
     }

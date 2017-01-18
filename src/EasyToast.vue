@@ -83,7 +83,7 @@
   .slide-down-enter,
   .slide-down-leave {
     opacity: 0;
-    top: -10%;
+    top: -10% !important;
   }
   .slide-up-enter-active,
   .slide-up-leave-active,
@@ -95,7 +95,7 @@
   .slide-up-enter,
   .slide-up-leave {
     opacity: 0;
-    top: 110%;
+    top: 110% !important;
   }
   .slide-left-enter-active,
   .slide-left-leave-active,
@@ -107,7 +107,7 @@
   .slide-left-enter,
   .slide-left-leave {
     opacity: 0;
-    left: 110%;
+    left: 110% !important;
   }
   .slide-right-enter-active,
   .slide-right-leave-active,
@@ -119,7 +119,7 @@
   .slide-right-enter,
   .slide-right-leave {
     opacity: 0;
-    left: -1000px;
+    left: -1000px !important;
   }
 </style>
 <script>
