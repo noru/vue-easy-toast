@@ -123,7 +123,7 @@
   }
 </style>
 <script>
-  const suppressWarn = Vue.version.startsWith('2.') ? null : { 'transition': { template: '<div><slot></slot></div>' } }
+  const suppressWarn = Vue && Vue.version.startsWith('1.') ? { 'transition': { template: '<div><slot></slot></div>' } } : null
   const DEFAULT_OPT = {
     id: 'easy-toast-default',
     className: '',
