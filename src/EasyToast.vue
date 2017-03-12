@@ -136,6 +136,7 @@
     message: ''
   }
   export default {
+    DEFAULT_OPT: DEFAULT_OPT,
     data() {
       return {
         queue: [],
