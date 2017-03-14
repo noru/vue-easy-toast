@@ -1,4 +1,6 @@
 # Vue-Easy-Toast
+![Vue 1.x](https://img.shields.io/badge/vue-1.x-green.svg "Vue 1 Compatible")
+![Vue 2.x](https://img.shields.io/badge/vue-2.x-green.svg "Vue 2 Compatible")
 
 A toast plugin for vue/vue2.
 
