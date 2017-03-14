@@ -14,7 +14,7 @@ Issue/PR is welcomed, I'll response as soon as possible.
 `npm install vue-easy-toast --save`
 
 #### Quickstart
-```
+```javascript
 // before start
 import Toast from 'vue-easy-toast'
 Vue.use(Toast)
@@ -51,7 +51,7 @@ transition | `string` | `fade` | Built-in transitions: `fade`, `slide-[up/down/l
 Besides minimum styling, *vue-easy-toast* try not to be opinionated about the appearance. It is a simply a `div`(class="et-wrapper") wrapped a `span`(class="et-content"). Apply your css freely with them or with your own classes passed in as `className`.  
 
 ##### example
-```
+```javascript
 Vue.toast('Hi, there!', {
   id: 'my-toast',
   parent: '#toast-container',
