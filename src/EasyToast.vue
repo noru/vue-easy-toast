@@ -124,7 +124,7 @@
 </style>
 <script>
   const Vue = window.Vue
-  const suppressWarn = Vue && Vue.version.startsWith('1.') ? { 'transition': { template: '<div><slot></slot></div>' } } : null
+  const suppressWarn = Vue && Vue.version.indexOf('1.') === 0 ? { 'transition': { template: '<div><slot></slot></div>' } } : null
   const DEFAULT_OPT = {
     id: 'easy-toast-default',
     className: '',
