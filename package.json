@@ -27,6 +27,9 @@
     "url": "https://github.com/noru/vue-easy-toast/issues"
   },
   "homepage": "https://github.com/noru/vue-easy-toast#readme",
+  "peerDependencies": {
+    "vue": "2.x"
+  },
   "devDependencies": {
     "babel-core": "^6.22.1",
     "babel-loader": "^6.2.10",
@@ -37,6 +40,7 @@
     "css-loader": "^0.27.0",
     "extract-text-webpack-plugin": "^2.1.0",
     "file-loader": "^0.10.0",
+    "vue": "^2.2.6",
     "vue-hot-reload-api": "^1.2.0",
     "vue-html-loader": "^1.2.3",
     "vue-loader": "11.0.0",

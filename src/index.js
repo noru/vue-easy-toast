@@ -1,4 +1,5 @@
-import EasyToastVue from './EasyToast.vue'
+import Vue from 'vue'
+import EasyToastVue from './EasyToast'
 
 export default {
   install(Vue, defaultOptions = {}) {

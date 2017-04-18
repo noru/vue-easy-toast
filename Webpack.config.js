@@ -11,6 +11,9 @@ module.exports = {
     library: ['vue-easy-toast'],
     libraryTarget: 'umd'
   },
+  externals: {
+    vue: 'vue'
+  },
   module: {
     rules: [
       {
@@ -33,6 +36,7 @@ module.exports = {
     ]
   },
   resolve: {
+    extensions: ['.js', '.vue'],
     alias: {
       'vue$': 'vue/dist/vue.common.js'
     }
@@ -44,7 +48,10 @@ module.exports = {
   performance: {
     hints: false
   },
-  devtool: '#eval-source-map'
+  devtool: '#eval-source-map',
+  plugins: [
+    new ExtractTextPlugin("vue-easy-toast.css")
+  ]
 }
 
 if (process.env.NODE_ENV === 'production') {
@@ -64,7 +71,6 @@ if (process.env.NODE_ENV === 'production') {
     }),
     new webpack.LoaderOptionsPlugin({
       minimize: true
-    }),
-    new ExtractTextPlugin("vue-easy-toast.css")
+    })
   ])
 }
