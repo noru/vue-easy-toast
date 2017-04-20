@@ -137,7 +137,7 @@
   }
   export default {
     DEFAULT_OPT: DEFAULT_OPT,
-    data: function() {
+    data() {
       return {
         queue: [],
         option: {},

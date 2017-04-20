@@ -6,6 +6,9 @@ A toast plugin for vue/vue2.
 
 [DEMO](https://noru.github.io/vue-easy-toast/example/index.html)
 
+**Note:**
+Since 1.x.x, only Vue 2 is supported. For Vue 1 users please stick to version 0.x.x
+
 Issue/PR is welcomed, I'll response as soon as possible.
 
 ## Usage
@@ -17,6 +20,11 @@ Issue/PR is welcomed, I'll response as soon as possible.
 ```javascript
 // before start
 import Toast from 'vue-easy-toast'
+
+// or a lite version without inline css, then you have to style yourself or manually import 'vue-easy-toast.css'
+import Toast from 'vue-easy-toast/dist/vue-easy-toast-lite.min.js'
+require('vue-easy-toast/dist/vue-easy-toast.css') // optional
+
 Vue.use(Toast)
 
 // in your code
