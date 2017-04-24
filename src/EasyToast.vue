@@ -195,7 +195,7 @@
             this.showing = false
             this.timeoutId = null
             setTimeout(() => this.queue.shift())
-          }, this.mergedOption.duration * pending)
+          }, this.mergedOption.duration)
         }
       }
     }
