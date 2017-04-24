@@ -155,23 +155,20 @@
         let verticalPosition = this.mergedOption.verticalPosition
 
         if(className){
-            if(typeof className === 'string'){
-                clazz.push(className)
-            }
-
-            if(Array.isArray(className)){
-                clazz = clazz.concat(className)
-            }
+          if(typeof className === 'string'){
+            clazz.push(className)
+          }
+          if(Array.isArray(className)){
+            clazz = clazz.concat(className)
+          }
         }
-
         if(horizontalPosition){
-            clazz.push(`et-${horizontalPosition}`)
+          clazz.push(`et-${horizontalPosition}`)
         }
 
         if(verticalPosition){
-            clazz.push(`et-${verticalPosition}`)
+          clazz.push(`et-${verticalPosition}`)
         }
-
         return clazz.join(' ')
       }
     },
@@ -194,7 +191,7 @@
             this.showing = false
             this.timeoutId = null
             setTimeout(() => this.queue.shift())
-          }, this.mergedOption.duration * pending)
+          }, this.mergedOption.duration)
         }
       }
     }
