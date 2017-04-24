@@ -1,6 +1,5 @@
 var path = require('path')
 var webpack = require('webpack')
-var ExtractTextPlugin = require("extract-text-webpack-plugin")
 
 module.exports = {
   entry: './src/index.js',
@@ -11,32 +10,24 @@ module.exports = {
     library: ['vue-easy-toast'],
     libraryTarget: 'umd'
   },
-  externals: {
-    vue: 'vue'
-  },
   module: {
     rules: [
       {
         test: /\.vue$/,
-        loader: 'vue-loader',
-        options: {
-          loaders: {
-            css: ExtractTextPlugin.extract({
-              use: 'css-loader',
-              fallback: 'vue-style-loader'
-            })
-          }
-        }
+        loader: 'vue-loader'
       },
       {
         test: /\.js$/,
         loader: 'babel-loader',
+        query: {
+          presets: ['es2015', 'stage-2'],
+          plugins: ['transform-runtime']
+        },
         exclude: /node_modules/
       }
     ]
   },
   resolve: {
-    extensions: ['.js', '.vue'],
     alias: {
       'vue$': 'vue/dist/vue.common.js'
     }
@@ -48,10 +39,7 @@ module.exports = {
   performance: {
     hints: false
   },
-  devtool: '#eval-source-map',
-  plugins: [
-    new ExtractTextPlugin("vue-easy-toast.css")
-  ]
+  devtool: '#eval-source-map'
 }
 
 if (process.env.NODE_ENV === 'production') {
