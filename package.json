@@ -15,6 +15,7 @@
     "type": "git",
     "url": "git+https://github.com/noru/vue-easy-toast.git"
   },
+  "typings": "types/index.d.ts",
   "keywords": [
     "vue",
     "toast",
