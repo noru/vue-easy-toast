@@ -6,6 +6,7 @@ var app = new Vue({
     return {
       duration: 3000,
       mode: 'override',
+      closeable: false,
       horizontalPosition: 'left',
       verticalPosition: 'top',
       defaultTransition: 'fade',
@@ -25,6 +26,7 @@ var app = new Vue({
       this.$toast(this.message, {
         duration: this.duration,
         mode: this.mode,
+        closeable: this.closeable,
         horizontalPosition: this.horizontalPosition,
         verticalPosition: this.verticalPosition,
         transition: this.defaultTransition,

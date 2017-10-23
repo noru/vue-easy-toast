@@ -95,6 +95,17 @@
         Queue
       </label>
     </p>
+    <label class="label">Closeable</label>
+    <p class="control has-icon has-icon-right">
+      <label class="radio">
+        <input type="radio" name="closeable" v-model="closeable" value="false">
+        Default
+      </label>
+      <label class="radio">
+        <input type="radio" name="closeable" v-model="closeable" value="true">
+        Closeable
+      </label>
+    </p>
     <p class="control">
       <label class="label">Horizontal Position</label>
       <label class="radio">
@@ -127,7 +138,7 @@
     </p>
 
     <button class="button is-primary" @click="toast">Toast it!</button>
-    <button class="button is-primary" @click="test">Test</button>
+    <!-- <button class="button is-primary" @click="test">Test</button> -->
   </div>
   <script src="app.js"></script>
 </body>

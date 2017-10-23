@@ -51,7 +51,8 @@ className | `string`, `array` | | Self-defined class names to pass through. Ther
 horizontalPosition | `string` | `right` | Position horizontal of toast. There are 3 pre-defined positions: `left`, `right` and `center`
 verticalPosition | `string` | `top` | Position vertical of toast. There are 2 pre-defined positions: `top` and `bottom`
 duration | `number` | 5000 | The duration one toast will last, in milliseconds
-mode | `string` | `override` | `override` or `queue`. If `override`, the last toast will forcibly flush previous toasts, otherwise it is queued after others
+mode | `string` | `override` | `override` or `queue`. If `override`, the last toast will forcibly flush previous
+closeable | `boolean` | `false` | `true` or `false`. If `true`, the toast can be closed manually
 transition | `string` | `fade` | Built-in transitions: `fade`, `slide-[up/down/left/right]`. See also [Transitions](http://v1.vuejs.org/guide/transitions.html)
 
 ##### Styling

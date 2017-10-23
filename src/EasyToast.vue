@@ -8,7 +8,8 @@
       :transition="mergedOption.transition"
       v-show="showing"
       >
-      <span class="et-content" v-html="mergedOption.message"></span>
+        <span class="et-content" v-html="mergedOption.message"></span>
+        <a class="et-close" v-if="mergedOption.closeable" v-on:click="close()">&times;</a>
       </div>
     </transition>
   </div>
@@ -32,6 +33,12 @@
   }
   .et-content {
     text-align: center;
+  }
+  .et-wrapper .et-close {
+    position: absolute;
+    top: 0;
+    right: 5px;
+    color: white;
   }
   .et-wrapper.et-left {
       right: auto;
@@ -133,7 +140,8 @@
     parent: 'body',
     transition: 'fade',
     duration: 5000,
-    message: ''
+    message: '',
+    closeable: false
   }
   export default {
     DEFAULT_OPT: DEFAULT_OPT,
@@ -153,6 +161,7 @@
         let className = this.option.className
         let horizontalPosition = this.mergedOption.horizontalPosition
         let verticalPosition = this.mergedOption.verticalPosition
+        let closeable = this.mergedOption.closeable
 
         if(className){
           if(typeof className === 'string'){
@@ -165,11 +174,19 @@
         if(horizontalPosition){
           clazz.push(`et-${horizontalPosition}`)
         }
-
+        if(closeable) {
+          clazz.push('et-closeable')
+        }
         if(verticalPosition){
           clazz.push(`et-${verticalPosition}`)
         }
         return clazz.join(' ')
+      }
+    },
+    methods: {
+      close: function() {
+        this.showing = false;
+        this.queue.shift();
       }
     },
     watch: {
