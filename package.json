@@ -1,6 +1,6 @@
 {
   "name": "vue-easy-toast",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "scripts": {
     "dev": "cross-env NODE_ENV=development webpack-dev-server --open --inline --hot",
     "dist": "cross-env NODE_ENV=production webpack --progress --hide-modules"
