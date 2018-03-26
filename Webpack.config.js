@@ -41,7 +41,7 @@ let InlineCssConfig = Object.assign({}, CommonConfig, {
         test: /\.js$/,
         loader: 'babel-loader',
         exclude: /node_modules/
-      }
+      },
     ]
   },
 })
@@ -73,7 +73,7 @@ let ExtractCssConfig = Object.assign({}, CommonConfig, {
         test: /\.js$/,
         loader: 'babel-loader',
         exclude: /node_modules/
-      }
+      },
     ]
   },
   plugins: [
@@ -81,11 +81,11 @@ let ExtractCssConfig = Object.assign({}, CommonConfig, {
   ]
 })
 
-module.exports = [ InlineCssConfig, ExtractCssConfig ]
+let configs = [ InlineCssConfig, ExtractCssConfig ]
 
 if (process.env.NODE_ENV === 'production') {
 
-  module.exports.forEach(function(config) {
+  configs.forEach(function(config) {
     config.devtool = '#source-map'
     config.output.filename = `${config.output.filename}.min.js`,
     config.plugins = (config.plugins || []).concat([
@@ -107,3 +107,5 @@ if (process.env.NODE_ENV === 'production') {
   }, this);
 
 }
+
+module.exports = configs
